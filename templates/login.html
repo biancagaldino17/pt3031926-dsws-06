@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+
+{% endblock %}
+
+{% block page_content %}
+    <form action='/login' method='post' class="form-signin">
+        <div class="borda">
+            {{ form.hidden_tag() }}
+            <h2>Login:</h2>
+            {{ form.usuario(class="input-block-level") }}
+            <br>
+            {{ form.senha(class="input-block-level") }}
+            <br>
+            {{ form.submit(class="btn btn-large btn-primary") }}
+        </div>
+    </form>
+{% endblock %}
